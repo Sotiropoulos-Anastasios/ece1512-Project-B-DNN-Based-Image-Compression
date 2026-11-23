@@ -67,7 +67,7 @@ The notebooks can use CUDA when available; otherwise CPU execution is supported 
 
 ## Dataset and split protocol
 
-**Source:** [ADPPatches — LeonYe on Hugging Face](https://huggingface.co/datasets/LeonYe/ADPPatches), referenced in the provided JPEG notebook. The experiments used the prepared local `data_1um_bicubic` split layout; merely downloading the upstream dataset does not guarantee identical split membership.
+**Source:** [ADPPatches — LeonYe on Hugging Face](https://huggingface.co/datasets/LeonYe/ADPPatches), referenced in the provided JPEG notebook. The experiments used the prepared local `data_1um_bicubic` split layout. 
 
 Place the prepared data beside (not inside) the two notebook directories:
 
@@ -78,15 +78,13 @@ data_1um_bicubic/
   test/
 ```
 
-Image files may be nested inside these split directories. The JPEG loader recursively scans for `jpg`, `jpeg`, `png`, `bmp`, `tif`, `tiff`, and `webp` files. The executed dataset-check cell reported:
+The executed dataset-check cell reported:
 
 | Split | Images |
 |---|---:|
 | Train | 12,616 |
 | Validation | 1,576 |
 | Test | 1,576 |
-
-The notebook calls `notebook_utils.check_split_overlap()`, which checks for **byte-identical images across these three splits using SHA-256**. This is not a patient-level or scene-level leakage test. For exact numerical replication, use the same prepared split and verify these counts before training. The current supplied materials do not include a portable, complete manifest of all source-image identities; the dataset version, license, and split provenance should be documented separately if available.
 
 ### JPEG preprocessing
 

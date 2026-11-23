@@ -97,49 +97,11 @@ The executed dataset-check cell reported:
 
 ## Part 1 — Reproduce JPEG restoration
 
-### Authoritative reproduction path: the executed notebook
 
-From the repository root, start Jupyter in the restoration module:
+Open **[`JPEG_Restoration_Student.ipynb`](jpeg_restoration_notebook/JPEG_Restoration_Student.ipynb)** in the Jupyter interface, select the correct Python environment and run cells in order.
 
-```powershell
-cd jpeg_restoration_notebook
-..\.venv\Scripts\python.exe -m jupyter lab
-```
 
-Open **[`JPEG_Restoration_Student.ipynb`](jpeg_restoration_notebook/JPEG_Restoration_Student.ipynb)** in the Jupyter interface, select the Python environment created above, and run cells in order.
-
-The notebook's configuration cell should have the following settings for the **reported run**:
-
-```python
-MODE = "full"
-DATA_ROOT = PROJECT_DIR.parent / "data_1um_bicubic"
-OUTPUT_ROOT = Path("runs")
-TRAIN_MODELS = True             # Retrain; set to False to reuse a saved checkpoint
-NUM_WORKERS = 0
-SEED = 42
-TRAIN_QUALITIES = [10, 20, 30, 40, 50]
-TEST_QUALITIES = [10, 15, 20, 25, 30, 40, 50]
-
-CFG = {
-    "train_dir": str(DATA_ROOT / "train"),
-    "val_dir": str(DATA_ROOT / "val"),
-    "test_dir": str(DATA_ROOT / "test"),
-    "epochs": 3,
-    "batch_size": 16,
-    "patch_size": 256,
-    "eval_patch_size": 256,
-    "channels": 32,
-    "depth": 5,
-    "qualities": TRAIN_QUALITIES,
-    "lr": 2e-4,
-    "num_workers": 0,
-    "seed": 42,
-}
-```
-
-For evaluation **without retraining**, set `TRAIN_MODELS = False` while retaining the other protocol settings and ensure `runs/spatial_only/best.pt` exists. Run the notebook in order; it loads the checkpoint, evaluates the chosen test qualities, and saves figures/tables. Its embedded correctness-check cell should print `All correctness checks passed.` A GPU was used for the originally executed training run; the exact accelerator/software package build is not fully pinned by the provided requirements files.
-
-**Why use the notebook instead of the starter shell script?** The executed notebook defines the specific 3-epoch, 256-pixel, 7-quality evaluation used in the report. The stand-alone script defaults and paths are different, so `run_experiments.sh` is **not an exact reproduction command for the reported results**. The standalone `train.py` CLI should not be treated as the validated reproduction path until its implementation is corrected and tested.
+For evaluation **without retraining**, set `TRAIN_MODELS = False`. The executed notebook defines the specific 3-epoch, 256-pixel, 7-quality evaluation used in the report. 
 
 ### Restoration model and training settings
 

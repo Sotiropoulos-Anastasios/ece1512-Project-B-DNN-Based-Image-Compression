@@ -123,7 +123,7 @@ The executed notebook logged 789 mini-batches per epoch. Validation restored PSN
 ### Metric definitions and rate accounting
 
 - **PSNR:** compute per-image RGB mean squared error with pixel range `[0,1]`, convert to dB, then average the image scores. The implementation clamps MSE below `1e-10`, capping the perfect-match score at 100 dB.
-- **SSIM for the reported notebook results:** custom RGB SSIM using an `11×11` Gaussian kernel with `sigma=1.5`, `C1=(0.01)^2`, and `C2=(0.03)^2`; average across batch, channels and valid spatial positions. This notebook implementation is the reference for the table below. The separate `metrics.py` uses a TorchMetrics SSIM implementation, which should not automatically be assumed numerically identical.
+- **SSIM for the reported notebook results:** custom RGB SSIM using an `11×11` Gaussian kernel with `sigma=1.5`, `C1=(0.01)^2`, and `C2=(0.03)^2`; average across batch, channels and valid spatial positions. 
 - **JPEG BPP:** measured from the actual JPEG bytes for the clean `256×256` crop, *including file headers*, using `8 × JPEG_file_bytes / (256 × 256)`. Encode with `subsampling=0`, `optimize=False` and the evaluated `Q`.
 - **Restoration bitrate:** JPEG post-processing changes only the decoded pixels, not the stored JPEG bitstream. The CNN and JPEG baseline thus have the **same input JPEG BPP at a given Q**. Do not substitute the size of a saved PNG restoration image for the original JPEG bitstream bitrate.
 
@@ -141,7 +141,7 @@ These values are transcribed from the **executed** `JPEG_Restoration_Student.ipy
 | 40 | 1.3186 | 31.1346 | 32.8180 | 0.8858 | 0.9184 |
 | 50 | 1.5075 | 31.8450 | 33.3319 | 0.8985 | 0.9252 |
 
-`Q=15` and `Q=25` are **unseen during training**; `Q=10,20,30,40,50` are seen training qualities, evaluated on new held-out images. The improvements are reconstruction-quality gains **at unchanged JPEG input BPP**, not evidence of new compression efficiency.
+`Q=15` and `Q=25` are **unseen during training**; `Q=10,20,30,40,50` are seen training qualities, evaluated on new held-out images. 
 
 ### Where to find generated outputs
 
@@ -151,7 +151,6 @@ These values are transcribed from the **executed** `JPEG_Restoration_Student.ipy
 | [`jpeg_restoration_notebook/runs/results/`](jpeg_restoration_notebook/runs/results/) | Per-quality metrics CSVs, quality curves, training curves, qualitative reconstructions |
 | [`jpeg_restoration_notebook/JPEG_Restoration_Student.ipynb`](jpeg_restoration_notebook/JPEG_Restoration_Student.ipynb) | Executed notebook with setup, checks, training, evaluation, and plots |
 
-For a fresh run, these artifacts are written or overwritten under the corresponding `runs/` folders. Training results can vary with hardware, library versions and sources of nondeterminism even when a seed is fixed.
 
 ## Part 2 — Learned image compression
 

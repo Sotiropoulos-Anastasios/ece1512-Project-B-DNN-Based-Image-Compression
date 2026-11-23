@@ -177,22 +177,15 @@ These values are transcribed from the **executed** `JPEG_Restoration_Student.ipy
 
 ## Part 2 — Reproduce learned image compression
 
-Open **[`DNN_Compression_Student.ipynb`](dnn_compression_notebook/DNN_Compression_Student.ipynb)** in Jupyter and run its cells in order. The notebook implements the differentiable quantizer and PSNR/SSIM metrics; the companion Python files implement the compact encoder–decoder, training loop, bitstream coder, JPEG evaluation, and controlled ablations.
+Open **[`DNN_Compression_Student.ipynb`](dnn_compression_notebook/DNN_Compression_Student.ipynb)** in Jupyter and run its cells in order. The notebook implements the differentiable quantizer and PSNR/SSIM metrics. The companion Python files implement the compact encoder–decoder, training loop, bitstream coder, JPEG evaluation, and controlled ablations.
 
-This is a **compact, single-scale, RDVQ-inspired educational implementation**. It demonstrates trainable vector quantization and rate–distortion optimization; it is **not a reproduction of every architectural component or every published result** of Jiang *et al.* (CVPR 2026). Refer to the [RDVQ paper](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Differentiable_Vector_Quantization_for_Rate-Distortion_Optimization_of_Generative_Image_Compression_CVPR_2026_paper.html) for the full proposed method.
+This is a **compact, single-scale, RDVQ-inspired educational implementation**. It demonstrates trainable vector quantization and rate–distortion optimization. It is **not a reproduction of every architectural component or every published result** of Jiang *et al.* (CVPR 2026). Refer to the [RDVQ paper](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Differentiable_Vector_Quantization_for_Rate-Distortion_Optimization_of_Generative_Image_Compression_CVPR_2026_paper.html) for the full proposed method.
 
 ### Run the DNN notebook
 
-From the repository root (after completing **Installation** and placing the local dataset as described above):
+Open `DNN_Compression_Student.ipynb` in the browser and select the environment's Python kernel. 
 
-```powershell
-cd dnn_compression_notebook
-..\.venv\Scripts\python.exe -m jupyter lab
-```
-
-Open `DNN_Compression_Student.ipynb` in the browser and select the environment's Python kernel. Its first setup cell finds `model.py` relative to the working directory and expects the dataset at `../data_1um_bicubic/`.
-
-**To reproduce the full experiment from training**, leave the executed notebook settings in Step 1/2 and Step 5/6: `MODE = 'larger'`, `SEED = 1512`, `USE_WARM_START = True`, `REUSE_CHECKPOINT = None`, `RUN_SWEEP = True`, and `RUN_CODEBOOK_SWEEP = True`. This trains a baseline, three rate-weight variants, and three codebook-size variants; results are written into newly timestamped run directories rather than overwriting the original runs. Run the test, JPEG-comparison, and Question 4 cells after model selection. Training was performed on CUDA in the supplied execution log; runtime and final scores may vary with hardware and package versions.
+**To reproduce the full experiment from training**, leave the executed notebook settings in Step 1/2 and Step 5/6: `MODE = 'larger'`, `SEED = 1512`, `USE_WARM_START = True`, `REUSE_CHECKPOINT = None`, `RUN_SWEEP = True`, and `RUN_CODEBOOK_SWEEP = True`. This trains a baseline, three rate-weight variants, and three codebook-size variants. Results are written into newly timestamped run directories rather than overwriting the original runs. Run the test, JPEG-comparison, and Question 4 cells after model selection. 
 
 **To evaluate the already saved baseline without retraining**, use the following in the Step 5 cell:
 
@@ -200,8 +193,7 @@ Open `DNN_Compression_Student.ipynb` in the browser and select the environment's
 REUSE_CHECKPOINT = PROJECT_DIR / 'runs' / 'solution_larger_20261123_050247_803626' / 'best.pt'
 ```
 
-Set `RUN_SWEEP = False` and `RUN_CODEBOOK_SWEEP = False` in the two ablation-training cells, and run the test and JPEG-comparison cells normally. **Work in a separate local clone or back up the original run folder first:** even the checkpoint-reuse branch writes `data_protocol.json`, and later evaluation cells write figures/CSVs inside `RUN_DIR`. The Question 4 cell can also re-evaluate the ablation checkpoints, but requires the saved sweep-JSON checkpoint paths to be valid on your computer; see **Portability notes** below.
-
+Set `RUN_SWEEP = False` and `RUN_CODEBOOK_SWEEP = False` in the two ablation-training cells, and run the test and JPEG-comparison cells normally. 
 ### Compression dataset, image preprocessing, and fixed test protocol
 
 The DNN uses the same prepared local `data_1um_bicubic/{train,val,test}/` dataset described in **Dataset and split protocol**, but its reported experiment trains on smaller **fixed subsets** instead of every available image.
@@ -219,9 +211,9 @@ The DNN uses the same prepared local `data_1um_bicubic/{train,val,test}/` datase
 | Small-image handling | Bicubic upsampling before cropping when the image is smaller than 64 pixels |
 | Batch size | 32 |
 
-The `data.py` helper reads prepared split directories if they exist. For unsplit source data, it can alternatively group images by the filename prefix preceding `_crop_` and split by source image. **The reported experiment used the existing prepared split directories**, not a newly generated group split. The notebook stores `data_protocol.json` with the actual selected relative filenames and `shared_data_splits.json` with the split manifest.
+.**The reported experiment used the existing prepared split directories**.
 
-The test subset is **256 crops**, not the full 1,576-image prepared test folder. Its size and sampling rule should be stated consistently in the report. The prepared-folder route checks the split directory structure and file existence, but **does not by itself certify independence at the original-source/patient level**.
+The test subset is **256 crops**, not the full 1,576-image prepared test folder.
 
 ### Compression model and training settings
 
@@ -252,11 +244,9 @@ With flattened latent vectors `z_i` and codewords `c_k`, training forms the soft
 
 The straight-through option uses the nearest codeword in the **forward** training pass while passing gradients through the soft assignment. Evaluation encodes the integer index `k_i = argmin_k ||z_i-c_k||²` and decodes using the same model's codebook. At the baseline resolution, the encoder produces a `32 × 32` index grid. This distinguishes the differentiable training surrogate from the actual stored symbols.
 
-The notebook trains encoder, decoder, codebook and learned categorical prior jointly. Let `r_k` denote the learned prior probability and `B,H,W` the input batch size and spatial dimensions. Its training rate surrogate is `Σ_(i,k) p_ik[-log2(r_k)] / (BHW)`; hard validation uses the corresponding selected-index costs. **Estimated BPP is not a measured compressed-file size.**
+The notebook trains encoder, decoder, codebook and learned categorical prior jointly. Let `r_k` denote the learned prior probability and `B,H,W` the input batch size and spatial dimensions. Its training rate surrogate is `Σ_(i,k) p_ik[-log2(r_k)] / (BHW)`; hard validation uses the corresponding selected-index costs. 
 
 ### True bitstream, decoding checks, and rate accounting
-
-The `codec.py` implementation serializes hard nearest-codeword indices into an `.ecvq` bitstream; the decoder reconstructs the index grid, looks up vectors in the matching codebook and runs the decoder network. The saved stream includes shape/configuration information and a model fingerprint. `ECV1` uses zlib on packed index bits; `ECV2`, when trained causal context tables are attached to the checkpoint, can select among zlib, left-context arithmetic and up-context arithmetic coding. `entropy_context.py` provides optional training-only context-count fitting. **The recorded main comparison selected zlib for all 256 test images**; do not describe its reported bitrate as an observed arithmetic-coder gain.
 
 Three distinct rate figures occur in the repository:
 
@@ -266,16 +256,9 @@ Three distinct rate figures occur in the repository:
 | **DNN payload BPP** | `8 × len(compressed_latent_payload) / (H × W)`; excludes the `.ecvq` header | Step 8 `jpeg_comparison/` and `dense_jpeg_comparison/` |
 | **DNN full-file BPP** | `8 × len(entire_.ecvq_stream) / (H × W)`; **includes the stream header** | Question 4 `q4_ablation_results/` plots and `summary.csv` |
 
-JPEG BPP uses `8 × len(complete_JPEG_file) / (H × W)` with Pillow `subsampling=0` (4:4:4), `optimize=False`, and the specified quality factor. The Question 4 plots consistently use **complete `.ecvq` file BPP versus complete JPEG file BPP**. The earlier Step 8 and dense-JPEG figures compare *DNN latent payload only* against full JPEG file size and **must not be presented as complete-file, like-for-like rate accounting**.
+JPEG BPP uses `8 × len(complete_JPEG_file) / (H × W)` with Pillow `subsampling=0` (4:4:4), `optimize=False`, and the specified quality factor.
 
 All DNN rates **exclude the shared trained checkpoint/model weights** (790,418 bytes for the selected `best.pt`, according to the executed notebook). Such model storage matters when assessing total deployment cost or very small collections of images. The full-file rate is still the size of the `.ecvq` stream, not the cost of distributing the shared decoder.
-
-**Integrity checks recorded in the notebook/code:**
-
-- `checks.py` verifies differentiable soft assignments (shapes, relative probabilities, temperature behavior, gradients), end-to-end backpropagation, and an odd-sized image encode–decode round trip.
-- Step 8 reconstructs each selected test image from its **serialized bitstream** and checks it against the hard-forward reconstruction.
-- Question 4 checks bitstream-decoded versus hard-forward output for the first image of each ablation checkpoint. The codec verifies the matching model fingerprint; `ECV2` additionally checks the packed-index CRC.
-- Reproducing a saved `.ecvq` image requires the corresponding **exact checkpoint**, not an independently trained model with the same dimensions.
 
 ### Reported held-out compression results
 
@@ -313,7 +296,7 @@ Selected comparison points from the **same Question 4 evaluation** (full JPEG fi
 | Q50 | 2.679 | 32.46 | 0.8954 |
 | Q90 | 4.968 | 37.47 | 0.9563 |
 
-The test protocol provides one measured rate–distortion comparison, **not a universal superiority claim**: the experiments use one seed, only 256 small crops, a fixed checkpoint per variant, a particular Pillow JPEG implementation, and exclude common model-weight storage from DNN BPP. The complete JPEG Q1–Q95 sweep is recorded separately in `dense_jpeg_comparison/`.
+The test protocol provides one measured rate–distortion comparison, the experiments use one seed, only 256 small crops, a fixed checkpoint per variant, a particular Pillow JPEG implementation, and exclude common model-weight storage from DNN BPP. The complete JPEG Q1–Q95 sweep is recorded separately in `dense_jpeg_comparison/`.
 
 ### DNN files, experiments, and report figures
 
@@ -332,46 +315,8 @@ The test protocol provides one measured rate–distortion comparison, **not a un
 | [`.../reconstructions_image_0.png`](dnn_compression_notebook/runs/solution_larger_20261123_050247_803626/q4_ablation_results/reconstructions_image_0.png) | Qualitative comparison on the first selected test image |
 | [`dnn_compression_notebook/runs/sweep_*/`](dnn_compression_notebook/runs/) and [`codebook_k*/`](dnn_compression_notebook/runs/) | Independently trained checkpoints and configs for controlled ablations |
 
-**Use the Question 4 full-file-BPP CSV and figures when making a like-for-like stored-file comparison with JPEG in the IEEE report.** Label Step 8 plots as *latent-payload* rate if also included. Numerical tables above summarize the executed notebook outputs; no additional training or test rerun was performed to create this README.
-
-### Portability notes when reproducing on another computer
-
-The released experiment artifacts record local Windows paths. These need adjustment on a fresh clone even when the dataset files and model checkpoints are present:
-
-1. **Dataset manifest:** `dnn_compression_notebook/runs/shared_data_splits.json` stores its original absolute dataset root. On a different machine, in the Step 2 configuration cell change `SPLIT_MANIFEST` to a new local filename such as `OUTPUT_ROOT / 'shared_data_splits_local.json'` **before** `split_images(...)` runs. The helper will create a manifest from the prepared local `train/val/test` folders. Keep the original as an experiment audit record; for an exact subset check, compare the selected relative filenames with the supplied `data_protocol.json`.
-2. **Saved ablation checkpoint paths:** `validation_sweep.json` and `codebook_sweep.json` contain original absolute checkpoint paths. Before running `q4_evaluation_cell.py` with released checkpoints on another machine, change the `checkpoint` fields in **local copies** of those JSON files to paths under your current `dnn_compression_notebook/runs/sweep_*/best.pt` and `runs/codebook_k*/best.pt`. The Q4 script loads each path directly. Training the ablation cells again generates new, local paths automatically.
-3. **Notebook execution state:** the saved Question 4 cell contains results and figures, but its Jupyter `execution_count` field is empty in the uploaded notebook. To independently certify a clean sequential rerun, execute it again in the correct environment after setting local paths; do not mistake saved output cells for evidence of a fresh execution on another machine.
-4. **Source files:** run the notebook against the matching `.py` files in `dnn_compression_notebook/`, rather than mixing versions from older copies. All saved `.ecvq` streams require their corresponding encoder/decoder checkpoint.
-
-## Reproducibility checklist and limitations
-
-The project follows the transparency principles of the [NeurIPS Paper Checklist](https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist). The statuses below refer to documentation and saved artifacts that were verified from the provided code/notebooks; they do **not** imply that the experiments were independently rerun in a clean environment.
-
-| Requirement | JPEG restoration | Learned compression |
-|---|---|---|
-| Source code and notebook | Included | Included (implemented quantizer and evaluation code) |
-| Dependencies | Project `requirements.txt`; lower bounds, not an exact lockfile | Project/subproject requirements; exact installed versions not pinned |
-| Dataset source / placement | ADPPatches, local `data_1um_bicubic` | Same source, local `data_1um_bicubic` |
-| Data split and experiment sample sizes | 12,616 / 1,576 / 1,576 prepared images | 1,024 / 128 / 256 sampled images; seeded selection |
-| Split audit | SHA-256 exact-duplicate helper; not proof of patient independence | Saved manifest and per-run selected filenames; prepared-directory check is not a source-group leakage test |
-| Image size and augmentation | 256 × 256; random crops/flips vs deterministic center crops | 64 × 64; random crop/horizontal flip vs deterministic center crops |
-| JPEG settings | `subsampling=0`, `optimize=False`, listed Q values | Same settings for JPEG comparison; Q1–Q95 dense sweep |
-| Seed and training configuration | Seed 42, 3 epochs, AdamW | Seed 1512, warm-up 8 + 40 epochs, Adam, baseline `K=256`, `λ=1e-4` |
-| Model selection | Highest validation PSNR | Lowest hard-validation RD objective; epoch 39 |
-| PSNR / SSIM | RGB per-image PSNR; Gaussian RGB SSIM | RGB per-image PSNR/SSIM; Question 4 reports decoded 8-bit reconstructions |
-| Reported bitrate | Actual JPEG file BPP (restoration does not change source bitstream) | Explicit estimated, payload, and complete `.ecvq` stream BPP |
-| Index/bitstream decoding | Not applicable | Odd-size round-trip tests, stream-decode comparison, model fingerprint; ECV2 CRC when present |
-| Controlled rate–distortion ablations | Not applicable | Rate-weight `0,0.001,0.01` and codebook `32,64,128` versus baseline |
-| Figures/results available | Metrics tables, quality curves, comparisons | JSON/CSV tables, PSNR/SSIM rate–distortion plots, decoded image examples |
-| Exact independent environment replay | Not demonstrated here | Not demonstrated here; machine-specific paths must be adapted |
-| Multiple-seed uncertainty | Not reported | Not reported |
-
-**Known limitations:** Both analyses rely on one reported seed and on a prepared dataset whose 2 GB image files are excluded from GitHub. The JPEG baseline is trained for only three epochs. DNN metrics are from 256 small 64 × 64 held-out crops and one validation-selected checkpoint. Its model file is excluded from BPP; codec container overhead matters at this resolution. Some saved run manifests encode local absolute paths, and the environment dependencies are not fully version-locked. Exact-duplicate checks alone are not sufficient evidence of patient-level/source-level independence. The standalone restoration helper has not been established as an independent replacement for the executed notebook, and new training may yield different numerical results.
-
+**Known limitations:** Both analyses rely on one reported seed and on a prepared dataset whose 2 GB image files are excluded from GitHub. The JPEG baseline is trained for only three epochs. DNN metrics are from 256 small 64 × 64 held-out crops and one validation-selected checkpoint. Its model file is excluded from BPP; codec container overhead matters at this resolution.
 ## Relationship to the report and submission
 
-The IEEE-style Project B report and this repository should be read together. The report should cite the [GitHub repository](https://github.com/Sotiropoulos-Anastasios/ece1512-Project-B-DNN-Based-Image-Compression), identify the evaluated commit, and reference the exact figures/CSVs above. Use the same dataset splits, sample counts, image sizes, JPEG settings, random seeds, codebook size, rate weights, checkpoint-selection criterion, metric definitions and decoding checks in the text and figure captions. In particular, distinguish **JPEG-restoration source-bitstream BPP**, **compression payload BPP**, and **compression full-file BPP**.
-
-Submit the written IEEE-format PDF through **ECE1512 Quercus**, as specified by the assignment. The GitHub repository provides supporting code, notebooks, pretrained checkpoints and selected auxiliary results; it does not replace the PDF submission or redistribute the excluded dataset. Evaluators should obtain the source data from the cited dataset provider and reconstruct the documented folder structure.
 
 **References:** [LeonYe/ADPPatches](https://huggingface.co/datasets/LeonYe/ADPPatches) (dataset); [Jiang *et al.*, “Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression,” CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Differentiable_Vector_Quantization_for_Rate-Distortion_Optimization_of_Generative_Image_Compression_CVPR_2026_paper.html) (research context); [NeurIPS Paper Checklist](https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist) (reproducibility reporting). The accompanying IEEE report contains the additional literature-review references.

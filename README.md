@@ -8,8 +8,6 @@ This repository accompanies the IEEE-style Project B report. It provides the imp
 1. **JPEG artifact removal:** a residual convolutional neural network (CNN) improves the decoded JPEG image *without changing the original JPEG bitstream or bitrate*.
 2. **Learned image compression:** a neural encoder–quantizer–decoder system encodes learned latent representations and is evaluated using actual compressed-file bitrate and reconstruction quality.
 
-**Status of this draft:** The JPEG restoration instructions and reported settings below have been checked against the uploaded, executed notebook. The learned-compression reproducibility section will be finalized after its notebook, code, and configurations are reviewed. This draft is **not yet the final submission README**.
-
 ## Repository structure
 
 ```text

@@ -1,0 +1,23 @@
+
+# Exclude the 2 GB dataset (including all its subfolders)
+data_1um_bicubic/
+
+# Python temporary files
+__pycache__/
+*.pyc
+*.pyo
+
+# Jupyter temporary files
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Local environment secrets
+.env
+
+# Editor and OS files
+.DS_Store
+Thumbs.db

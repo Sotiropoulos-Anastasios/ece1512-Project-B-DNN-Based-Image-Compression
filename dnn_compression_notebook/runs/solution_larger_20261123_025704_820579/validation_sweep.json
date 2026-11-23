@@ -1,0 +1,29 @@
+[
+  {
+    "rate_weight": 0.0,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\sweep_0.0_20261123_030020_834671\\best.pt",
+    "mse": 0.0009882307931547984,
+    "psnr": 31.679840087890625,
+    "ssim": 0.9117212742567062,
+    "estimated_bpp": 2.0,
+    "loss": 0.0009882307931547984
+  },
+  {
+    "rate_weight": 0.001,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\sweep_0.001_20261123_030337_630764\\best.pt",
+    "mse": 0.0010013965365942568,
+    "psnr": 31.608896732330322,
+    "ssim": 0.9117901176214218,
+    "estimated_bpp": 1.9135013818740845,
+    "loss": 0.0029148979184683414
+  },
+  {
+    "rate_weight": 0.01,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\sweep_0.01_20261123_030654_628218\\best.pt",
+    "mse": 0.0011547938192961738,
+    "psnr": 30.662265300750732,
+    "ssim": 0.8995342254638672,
+    "estimated_bpp": 1.8536109924316406,
+    "loss": 0.01969090374361258
+  }
+]

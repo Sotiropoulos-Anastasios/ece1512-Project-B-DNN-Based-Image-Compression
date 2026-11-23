@@ -1,0 +1,781 @@
+{
+  "metrics": [
+    {
+      "method": "DNN",
+      "images": 256,
+      "actual_bpp": 1.2665863037109375,
+      "mean_psnr": 31.730483636260033,
+      "mean_ssim": 0.9118317684624344,
+      "estimated_bpp": 1.937281598802656
+    },
+    {
+      "method": "JPEG Q1",
+      "images": 256,
+      "actual_bpp": 1.5012588500976562,
+      "mean_psnr": 21.11229744553566,
+      "mean_ssim": 0.5599094645585865,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q2",
+      "images": 256,
+      "actual_bpp": 1.5015029907226562,
+      "mean_psnr": 21.115258313715458,
+      "mean_ssim": 0.5602863585809246,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q3",
+      "images": 256,
+      "actual_bpp": 1.5214691162109375,
+      "mean_psnr": 21.45934819430113,
+      "mean_ssim": 0.5899329496314749,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q4",
+      "images": 256,
+      "actual_bpp": 1.5550155639648438,
+      "mean_psnr": 22.786116860806942,
+      "mean_ssim": 0.6392382141202688,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q5",
+      "images": 256,
+      "actual_bpp": 1.5901718139648438,
+      "mean_psnr": 24.145094998180866,
+      "mean_ssim": 0.6764951176010072,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q6",
+      "images": 256,
+      "actual_bpp": 1.6249847412109375,
+      "mean_psnr": 25.296290419995785,
+      "mean_ssim": 0.7031477793352678,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q7",
+      "images": 256,
+      "actual_bpp": 1.6585311889648438,
+      "mean_psnr": 25.727985724806786,
+      "mean_ssim": 0.7263433621264994,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q8",
+      "images": 256,
+      "actual_bpp": 1.6912612915039062,
+      "mean_psnr": 26.03010107576847,
+      "mean_ssim": 0.7399417021078989,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q9",
+      "images": 256,
+      "actual_bpp": 1.7234039306640625,
+      "mean_psnr": 26.273852683603764,
+      "mean_ssim": 0.7522738336119801,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q10",
+      "images": 256,
+      "actual_bpp": 1.7551345825195312,
+      "mean_psnr": 26.788548298180103,
+      "mean_ssim": 0.7650925067719072,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q11",
+      "images": 256,
+      "actual_bpp": 1.7861480712890625,
+      "mean_psnr": 27.25746452063322,
+      "mean_ssim": 0.7762343643698841,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q12",
+      "images": 256,
+      "actual_bpp": 1.8161239624023438,
+      "mean_psnr": 27.78153007477522,
+      "mean_ssim": 0.7856499012559652,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q13",
+      "images": 256,
+      "actual_bpp": 1.8469390869140625,
+      "mean_psnr": 27.892587170004845,
+      "mean_ssim": 0.7943981348071247,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q14",
+      "images": 256,
+      "actual_bpp": 1.8741912841796875,
+      "mean_psnr": 28.170579478144646,
+      "mean_ssim": 0.8012845632620156,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q15",
+      "images": 256,
+      "actual_bpp": 1.9036026000976562,
+      "mean_psnr": 28.395634070038795,
+      "mean_ssim": 0.8069349690340459,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q16",
+      "images": 256,
+      "actual_bpp": 1.9326248168945312,
+      "mean_psnr": 28.634653203189373,
+      "mean_ssim": 0.8133087723981589,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q17",
+      "images": 256,
+      "actual_bpp": 1.9605255126953125,
+      "mean_psnr": 28.905088871717453,
+      "mean_ssim": 0.8191530704498291,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q18",
+      "images": 256,
+      "actual_bpp": 1.9883575439453125,
+      "mean_psnr": 29.22293472290039,
+      "mean_ssim": 0.8245798726566136,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q19",
+      "images": 256,
+      "actual_bpp": 2.0143585205078125,
+      "mean_psnr": 29.37900836020708,
+      "mean_ssim": 0.8286171357613057,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q20",
+      "images": 256,
+      "actual_bpp": 2.0388717651367188,
+      "mean_psnr": 29.476458840072155,
+      "mean_ssim": 0.8325522616505623,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q21",
+      "images": 256,
+      "actual_bpp": 2.0672378540039062,
+      "mean_psnr": 29.613979041576385,
+      "mean_ssim": 0.8375139192212373,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q22",
+      "images": 256,
+      "actual_bpp": 2.0926971435546875,
+      "mean_psnr": 29.852103181183338,
+      "mean_ssim": 0.8408735927660018,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q23",
+      "images": 256,
+      "actual_bpp": 2.1188735961914062,
+      "mean_psnr": 29.95989229530096,
+      "mean_ssim": 0.8444324089214206,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q24",
+      "images": 256,
+      "actual_bpp": 2.1441192626953125,
+      "mean_psnr": 30.15537416189909,
+      "mean_ssim": 0.8483094174880534,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q25",
+      "images": 256,
+      "actual_bpp": 2.1661911010742188,
+      "mean_psnr": 30.26721192151308,
+      "mean_ssim": 0.8509934148751199,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q26",
+      "images": 256,
+      "actual_bpp": 2.190399169921875,
+      "mean_psnr": 30.382348336279392,
+      "mean_ssim": 0.8537825657986104,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q27",
+      "images": 256,
+      "actual_bpp": 2.2159576416015625,
+      "mean_psnr": 30.52990236133337,
+      "mean_ssim": 0.8568775178864598,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q28",
+      "images": 256,
+      "actual_bpp": 2.24072265625,
+      "mean_psnr": 30.653293773531914,
+      "mean_ssim": 0.8596202523913234,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q29",
+      "images": 256,
+      "actual_bpp": 2.2612533569335938,
+      "mean_psnr": 30.74654310196638,
+      "mean_ssim": 0.8617240730673075,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q30",
+      "images": 256,
+      "actual_bpp": 2.2830886840820312,
+      "mean_psnr": 30.856754183769226,
+      "mean_ssim": 0.8640156348701566,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q31",
+      "images": 256,
+      "actual_bpp": 2.30450439453125,
+      "mean_psnr": 30.95862490683794,
+      "mean_ssim": 0.8661028603091836,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q32",
+      "images": 256,
+      "actual_bpp": 2.3265838623046875,
+      "mean_psnr": 31.065650425851345,
+      "mean_ssim": 0.8685836647637188,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q33",
+      "images": 256,
+      "actual_bpp": 2.3519134521484375,
+      "mean_psnr": 31.175002597272396,
+      "mean_ssim": 0.871000247541815,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q34",
+      "images": 256,
+      "actual_bpp": 2.3703460693359375,
+      "mean_psnr": 31.253709189593792,
+      "mean_ssim": 0.8724670286756009,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q35",
+      "images": 256,
+      "actual_bpp": 2.3943023681640625,
+      "mean_psnr": 31.364175893366337,
+      "mean_ssim": 0.8745438412297517,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q36",
+      "images": 256,
+      "actual_bpp": 2.4185104370117188,
+      "mean_psnr": 31.48962891101837,
+      "mean_ssim": 0.876966290641576,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q37",
+      "images": 256,
+      "actual_bpp": 2.4335403442382812,
+      "mean_psnr": 31.550066985189915,
+      "mean_ssim": 0.8782347566448152,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q38",
+      "images": 256,
+      "actual_bpp": 2.4578018188476562,
+      "mean_psnr": 31.6558308750391,
+      "mean_ssim": 0.8799951749388129,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q39",
+      "images": 256,
+      "actual_bpp": 2.4761123657226562,
+      "mean_psnr": 31.70502369105816,
+      "mean_ssim": 0.8815141583327204,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q40",
+      "images": 256,
+      "actual_bpp": 2.4877243041992188,
+      "mean_psnr": 31.74772149324417,
+      "mean_ssim": 0.8823193970602006,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q41",
+      "images": 256,
+      "actual_bpp": 2.5183258056640625,
+      "mean_psnr": 31.844706907868385,
+      "mean_ssim": 0.8845406563486904,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q42",
+      "images": 256,
+      "actual_bpp": 2.5323028564453125,
+      "mean_psnr": 31.88600216805935,
+      "mean_ssim": 0.8853280604816973,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q43",
+      "images": 256,
+      "actual_bpp": 2.5492095947265625,
+      "mean_psnr": 31.949517481029034,
+      "mean_ssim": 0.8866973191034049,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q44",
+      "images": 256,
+      "actual_bpp": 2.5767822265625,
+      "mean_psnr": 32.120124362409115,
+      "mean_ssim": 0.8889725834596902,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q45",
+      "images": 256,
+      "actual_bpp": 2.5893936157226562,
+      "mean_psnr": 32.157576985657215,
+      "mean_ssim": 0.8896944674197584,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q46",
+      "images": 256,
+      "actual_bpp": 2.6148605346679688,
+      "mean_psnr": 32.23953106999397,
+      "mean_ssim": 0.891420385800302,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q47",
+      "images": 256,
+      "actual_bpp": 2.626708984375,
+      "mean_psnr": 32.28606537729502,
+      "mean_ssim": 0.8922904944047332,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q48",
+      "images": 256,
+      "actual_bpp": 2.6423110961914062,
+      "mean_psnr": 32.32226990163326,
+      "mean_ssim": 0.8929476626217365,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q49",
+      "images": 256,
+      "actual_bpp": 2.671356201171875,
+      "mean_psnr": 32.43201842904091,
+      "mean_ssim": 0.8948356602340937,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q50",
+      "images": 256,
+      "actual_bpp": 2.6785125732421875,
+      "mean_psnr": 32.461425706744194,
+      "mean_ssim": 0.8953662056010216,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q51",
+      "images": 256,
+      "actual_bpp": 2.6861038208007812,
+      "mean_psnr": 32.49127521365881,
+      "mean_ssim": 0.8958630983252078,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q52",
+      "images": 256,
+      "actual_bpp": 2.71795654296875,
+      "mean_psnr": 32.59160179644823,
+      "mean_ssim": 0.8977032455150038,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q53",
+      "images": 256,
+      "actual_bpp": 2.7361984252929688,
+      "mean_psnr": 32.63298197835684,
+      "mean_ssim": 0.8984792237170041,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q54",
+      "images": 256,
+      "actual_bpp": 2.750579833984375,
+      "mean_psnr": 32.688769444823265,
+      "mean_ssim": 0.8995627460535616,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q55",
+      "images": 256,
+      "actual_bpp": 2.7728958129882812,
+      "mean_psnr": 32.7002218067646,
+      "mean_ssim": 0.9008165800478309,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q56",
+      "images": 256,
+      "actual_bpp": 2.7945709228515625,
+      "mean_psnr": 32.762930795550346,
+      "mean_ssim": 0.901990840677172,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q57",
+      "images": 256,
+      "actual_bpp": 2.8197097778320312,
+      "mean_psnr": 32.82646845281124,
+      "mean_ssim": 0.9030952379107475,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q58",
+      "images": 256,
+      "actual_bpp": 2.84466552734375,
+      "mean_psnr": 32.92640322446823,
+      "mean_ssim": 0.9043832046445459,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q59",
+      "images": 256,
+      "actual_bpp": 2.8618545532226562,
+      "mean_psnr": 32.973669558763504,
+      "mean_ssim": 0.9052541658747941,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q60",
+      "images": 256,
+      "actual_bpp": 2.8849716186523438,
+      "mean_psnr": 33.042052425444126,
+      "mean_ssim": 0.9064283440820873,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q61",
+      "images": 256,
+      "actual_bpp": 2.916473388671875,
+      "mean_psnr": 33.089023888111115,
+      "mean_ssim": 0.9077814538031816,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q62",
+      "images": 256,
+      "actual_bpp": 2.93402099609375,
+      "mean_psnr": 33.14659847319126,
+      "mean_ssim": 0.9087945856153965,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q63",
+      "images": 256,
+      "actual_bpp": 2.9672927856445312,
+      "mean_psnr": 33.22964460402727,
+      "mean_ssim": 0.9100444831419736,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q64",
+      "images": 256,
+      "actual_bpp": 2.9909896850585938,
+      "mean_psnr": 33.316457249224186,
+      "mean_ssim": 0.9113715069834143,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q65",
+      "images": 256,
+      "actual_bpp": 3.021881103515625,
+      "mean_psnr": 33.399120822548866,
+      "mean_ssim": 0.9125071952585131,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q66",
+      "images": 256,
+      "actual_bpp": 3.0539398193359375,
+      "mean_psnr": 33.48296010494232,
+      "mean_ssim": 0.9137269165366888,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q67",
+      "images": 256,
+      "actual_bpp": 3.0831146240234375,
+      "mean_psnr": 33.82953627407551,
+      "mean_ssim": 0.9151224731467664,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q68",
+      "images": 256,
+      "actual_bpp": 3.1214828491210938,
+      "mean_psnr": 33.92951761931181,
+      "mean_ssim": 0.9164547934196889,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q69",
+      "images": 256,
+      "actual_bpp": 3.1561737060546875,
+      "mean_psnr": 34.00724245607853,
+      "mean_ssim": 0.9175456797238439,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q70",
+      "images": 256,
+      "actual_bpp": 3.1971054077148438,
+      "mean_psnr": 34.115635111927986,
+      "mean_ssim": 0.9191878593992442,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q71",
+      "images": 256,
+      "actual_bpp": 3.2439117431640625,
+      "mean_psnr": 34.26232586801052,
+      "mean_ssim": 0.9208324893843383,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q72",
+      "images": 256,
+      "actual_bpp": 3.2729110717773438,
+      "mean_psnr": 34.34290571510792,
+      "mean_ssim": 0.9220183959696442,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q73",
+      "images": 256,
+      "actual_bpp": 3.3222732543945312,
+      "mean_psnr": 34.440387696027756,
+      "mean_ssim": 0.923300119349733,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q74",
+      "images": 256,
+      "actual_bpp": 3.382720947265625,
+      "mean_psnr": 34.583625845611095,
+      "mean_ssim": 0.9251345444936305,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q75",
+      "images": 256,
+      "actual_bpp": 3.4019012451171875,
+      "mean_psnr": 34.64452013373375,
+      "mean_ssim": 0.9258882098365575,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q76",
+      "images": 256,
+      "actual_bpp": 3.4586181640625,
+      "mean_psnr": 34.7861495167017,
+      "mean_ssim": 0.9274550350382924,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q77",
+      "images": 256,
+      "actual_bpp": 3.5314102172851562,
+      "mean_psnr": 34.9077262878418,
+      "mean_ssim": 0.9295949810184538,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q78",
+      "images": 256,
+      "actual_bpp": 3.59783935546875,
+      "mean_psnr": 34.9790695309639,
+      "mean_ssim": 0.9309601867571473,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q79",
+      "images": 256,
+      "actual_bpp": 3.6420059204101562,
+      "mean_psnr": 35.099216751754284,
+      "mean_ssim": 0.9325339051429182,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q80",
+      "images": 256,
+      "actual_bpp": 3.722259521484375,
+      "mean_psnr": 35.27250512689352,
+      "mean_ssim": 0.9345002775080502,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q81",
+      "images": 256,
+      "actual_bpp": 3.8019027709960938,
+      "mean_psnr": 35.3674923107028,
+      "mean_ssim": 0.9364397181198001,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q82",
+      "images": 256,
+      "actual_bpp": 3.88092041015625,
+      "mean_psnr": 35.51857241243124,
+      "mean_ssim": 0.9380969132762402,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q83",
+      "images": 256,
+      "actual_bpp": 3.979827880859375,
+      "mean_psnr": 35.70132991671562,
+      "mean_ssim": 0.9400485206861049,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q84",
+      "images": 256,
+      "actual_bpp": 4.070640563964844,
+      "mean_psnr": 35.97450025379658,
+      "mean_ssim": 0.9419450780842453,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q85",
+      "images": 256,
+      "actual_bpp": 4.176094055175781,
+      "mean_psnr": 36.172980174422264,
+      "mean_ssim": 0.9439883648883551,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q86",
+      "images": 256,
+      "actual_bpp": 4.302787780761719,
+      "mean_psnr": 36.39472670853138,
+      "mean_ssim": 0.9463205684442073,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q87",
+      "images": 256,
+      "actual_bpp": 4.41925048828125,
+      "mean_psnr": 36.516324423253536,
+      "mean_ssim": 0.9483846896328032,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q88",
+      "images": 256,
+      "actual_bpp": 4.598472595214844,
+      "mean_psnr": 36.799540899693966,
+      "mean_ssim": 0.950974385952577,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q89",
+      "images": 256,
+      "actual_bpp": 4.730598449707031,
+      "mean_psnr": 37.06929812580347,
+      "mean_ssim": 0.9533257158473134,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q90",
+      "images": 256,
+      "actual_bpp": 4.96832275390625,
+      "mean_psnr": 37.47489972412586,
+      "mean_ssim": 0.9562804321758449,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q91",
+      "images": 256,
+      "actual_bpp": 5.184730529785156,
+      "mean_psnr": 37.835985228419304,
+      "mean_ssim": 0.9592039617709816,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q92",
+      "images": 256,
+      "actual_bpp": 5.411094665527344,
+      "mean_psnr": 38.24211487174034,
+      "mean_ssim": 0.9621624480932951,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q93",
+      "images": 256,
+      "actual_bpp": 5.7806396484375,
+      "mean_psnr": 38.782581984996796,
+      "mean_ssim": 0.9657763354480267,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q94",
+      "images": 256,
+      "actual_bpp": 6.247001647949219,
+      "mean_psnr": 39.4068987518549,
+      "mean_ssim": 0.9696451942436397,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q95",
+      "images": 256,
+      "actual_bpp": 6.805145263671875,
+      "mean_psnr": 40.14904326200485,
+      "mean_ssim": 0.9736880261916667,
+      "estimated_bpp": null
+    }
+  ],
+  "used_codewords": 218,
+  "dnn_coding_modes": {
+    "zlib": 256,
+    "arithmetic-left": 0,
+    "arithmetic-up": 0
+  },
+  "codebook_size": 256,
+  "jpeg_subsampling": 0,
+  "rate_definition": "DNN: compressed latent payload bytes only; JPEG: complete JPEG file bytes; shared model excluded"
+}

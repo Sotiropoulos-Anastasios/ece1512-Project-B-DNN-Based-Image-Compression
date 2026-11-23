@@ -1,0 +1,32 @@
+[
+  {
+    "codebook_size": 32,
+    "rate_weight": 0.0001,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\codebook_k32_20261123_031010_080073\\best.pt",
+    "mse": 0.001446837850380689,
+    "psnr": 29.837022304534912,
+    "ssim": 0.8875028938055038,
+    "estimated_bpp": 1.2003187537193298,
+    "loss": 0.0015668697257526219
+  },
+  {
+    "codebook_size": 64,
+    "rate_weight": 0.0001,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\codebook_k64_20261123_031323_589668\\best.pt",
+    "mse": 0.00122043899318669,
+    "psnr": 30.614612579345703,
+    "ssim": 0.8973991274833679,
+    "estimated_bpp": 1.4433048963546753,
+    "loss": 0.0013647694828221575
+  },
+  {
+    "codebook_size": 128,
+    "rate_weight": 0.0001,
+    "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\codebook_k128_20261123_031634_070332\\best.pt",
+    "mse": 0.0011314164294162765,
+    "psnr": 31.145958423614502,
+    "ssim": 0.9039612263441086,
+    "estimated_bpp": 1.6843357682228088,
+    "loss": 0.0012998500062385574
+  }
+]

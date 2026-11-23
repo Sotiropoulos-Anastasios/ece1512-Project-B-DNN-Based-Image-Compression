@@ -1,0 +1,8 @@
+{
+  "checkpoint": "c:\\Users\\anest\\Desktop\\UofT\\Digital Image Processing\\Project B\\Project_B_Starter_Code\\ECE1512_Student_Project\\dnn_compression_notebook\\runs\\solution_larger_20261123_050247_803626\\best.pt",
+  "mse": 0.0009129770551226102,
+  "psnr": 31.63970923423767,
+  "ssim": 0.9111695140600204,
+  "estimated_bpp": 1.941293478012085,
+  "loss": 0.0011071064029238187
+}

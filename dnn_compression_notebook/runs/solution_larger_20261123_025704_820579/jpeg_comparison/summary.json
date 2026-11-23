@@ -1,0 +1,77 @@
+{
+  "metrics": [
+    {
+      "method": "DNN",
+      "images": 256,
+      "actual_bpp": 1.2665863037109375,
+      "mean_psnr": 31.730483636260033,
+      "mean_ssim": 0.9118317684624344,
+      "estimated_bpp": 1.937281598802656
+    },
+    {
+      "method": "JPEG Q1",
+      "images": 256,
+      "actual_bpp": 1.5012588500976562,
+      "mean_psnr": 21.11229744553566,
+      "mean_ssim": 0.5599094645585865,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q10",
+      "images": 256,
+      "actual_bpp": 1.7551345825195312,
+      "mean_psnr": 26.788548298180103,
+      "mean_ssim": 0.7650925067719072,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q20",
+      "images": 256,
+      "actual_bpp": 2.0388717651367188,
+      "mean_psnr": 29.476458840072155,
+      "mean_ssim": 0.8325522616505623,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q30",
+      "images": 256,
+      "actual_bpp": 2.2830886840820312,
+      "mean_psnr": 30.856754183769226,
+      "mean_ssim": 0.8640156348701566,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q50",
+      "images": 256,
+      "actual_bpp": 2.6785125732421875,
+      "mean_psnr": 32.461425706744194,
+      "mean_ssim": 0.8953662056010216,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q70",
+      "images": 256,
+      "actual_bpp": 3.1971054077148438,
+      "mean_psnr": 34.115635111927986,
+      "mean_ssim": 0.9191878593992442,
+      "estimated_bpp": null
+    },
+    {
+      "method": "JPEG Q90",
+      "images": 256,
+      "actual_bpp": 4.96832275390625,
+      "mean_psnr": 37.47489972412586,
+      "mean_ssim": 0.9562804321758449,
+      "estimated_bpp": null
+    }
+  ],
+  "used_codewords": 218,
+  "dnn_coding_modes": {
+    "zlib": 256,
+    "arithmetic-left": 0,
+    "arithmetic-up": 0
+  },
+  "codebook_size": 256,
+  "jpeg_subsampling": 0,
+  "rate_definition": "DNN: compressed latent payload bytes only; JPEG: complete JPEG file bytes; shared model excluded"
+}

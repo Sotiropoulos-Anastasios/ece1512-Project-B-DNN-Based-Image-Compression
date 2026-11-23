@@ -1,0 +1,7 @@
+{
+  "epochs": 40,
+  "lr": 0.0002,
+  "rate_weight": 0.0,
+  "temperature_start": 0.029669759795069695,
+  "temperature_end": 0.005933951959013939
+}

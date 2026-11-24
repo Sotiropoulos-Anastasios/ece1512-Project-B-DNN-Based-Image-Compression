@@ -2,7 +2,7 @@
 
 **Artifact:** [Project B GitHub code repository](https://github.com/Sotiropoulos-Anastasios/ece1512-Project-B-DNN-Based-Image-Compression).  
 **Companion artifact:** IEEE-style Project B PDF report, submitted separately through ECE1512 Quercus.  
-**Basis:** [ML Code Completeness Checklist (Papers with Code)](https://medium.com/paperswithcode/ml-code-completeness-checklist-e9127b168501), alongside the course's [Machine Learning Reproducibility Checklist v2.0](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist-v2.0.pdf).  
+**Basis:** The course's [Machine Learning Reproducibility Checklist v2.0](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist-v2.0.pdf).  
 **Scope:** This file concerns the **code, trained checkpoints, figures, configuration records and independent use of the repository**, not completeness of claims in the submitted PDF. See the separate [paper checklist](PAPER_REPRODUCIBILITY.md).  
 **Assessment basis:** Uploaded notebooks/modules, accompanying README draft and the Git command log (`main`, initial commit `9ab86c3`). The current live GitHub branch and a fresh end-to-end rerun were **not independently verified** for this checklist.  
 **Statuses:** **Yes** = provided in the reviewed artifact snapshot; **Partial** = available but with reproducibility restrictions; **No** = absent/not demonstrated; **N/A** = outside project scope.

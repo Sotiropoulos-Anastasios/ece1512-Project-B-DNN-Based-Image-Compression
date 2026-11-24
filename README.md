@@ -318,5 +318,14 @@ The test protocol provides one measured rate–distortion comparison, the experi
 **Known limitations:** Both analyses rely on one reported seed and on a prepared dataset whose 2 GB image files are excluded from GitHub. The JPEG baseline is trained for only three epochs. DNN metrics are from 256 small 64 × 64 held-out crops and one validation-selected checkpoint. Its model file is excluded from BPP; codec container overhead matters at this resolution.
 ## Relationship to the report and submission
 
+## Paper and code reproducibility checklists
+
+The Project B report and this repository are two complementary artifacts. The companion checklists document which experimental details are reported, where to find the evidence, and the limitations of independent reproduction:
+
+- **[Paper / Report Reproducibility Checklist](PAPER_REPRODUCIBILITY.md)** — model assumptions, dataset splits, image sizes, JPEG settings, random seeds, codebook configurations, evaluation statistics, full-file versus payload-rate accounting, decoder checks, and remaining scientific-reporting gaps.
+- **[Code Completeness / Reproducibility Checklist](CODE_REPRODUCIBILITY.md)** — dependencies, notebook entry points, training/evaluation scripts, released model weights, exact saved result locations, local dataset setup, and portability limitations.
+
+These checklists are based on the [Machine Learning Reproducibility Checklist v2.0](https://www.cs.mcgill.ca/~jpineau/ReproducibilityChecklist-v2.0.pdf) and the [Papers with Code ML Code Completeness Checklist](https://github.com/paperswithcode/releasing-research-code).
+
 
 **References:** [LeonYe/ADPPatches](https://huggingface.co/datasets/LeonYe/ADPPatches) (dataset); [Jiang *et al.*, “Differentiable Vector Quantization for Rate-Distortion Optimization of Generative Image Compression,” CVPR 2026](https://openaccess.thecvf.com/content/CVPR2026/html/Jiang_Differentiable_Vector_Quantization_for_Rate-Distortion_Optimization_of_Generative_Image_Compression_CVPR_2026_paper.html) (research context); [NeurIPS Paper Checklist](https://neurips.cc/Conferences/2021/PaperInformation/PaperChecklist) (reproducibility reporting). The accompanying IEEE report contains the additional literature-review references.

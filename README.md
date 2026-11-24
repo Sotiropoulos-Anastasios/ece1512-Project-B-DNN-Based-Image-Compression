@@ -316,7 +316,6 @@ The test protocol provides one measured rate–distortion comparison, the experi
 | [`dnn_compression_notebook/runs/sweep_*/`](dnn_compression_notebook/runs/) and [`codebook_k*/`](dnn_compression_notebook/runs/) | Independently trained checkpoints and configs for controlled ablations |
 
 **Known limitations:** Both analyses rely on one reported seed and on a prepared dataset whose 2 GB image files are excluded from GitHub. The JPEG baseline is trained for only three epochs. DNN metrics are from 256 small 64 × 64 held-out crops and one validation-selected checkpoint. Its model file is excluded from BPP; codec container overhead matters at this resolution.
-## Relationship to the report and submission
 
 ## Paper and code reproducibility checklists
 
